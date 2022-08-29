@@ -57,4 +57,9 @@ sub marine {
 # $save_fred and $save_barney. And then, when you’re done with the subroutine,
 # you’d have to copy those back to $fred and $barney again.
 # Luckily, Perl has subroutine arguments. To pass an argument list to the subroutine,
-# simply place the list expression, in parentheses, after the subroutine invocation,
+# simply place the list expression, in parentheses, after the subroutine invocation.
+
+# Perl passes the list to the subroutine; that is, Perl makes the list available for the sub‐
+# routine to use however it needs to. Of course, you have to store this list somewhere,
+# so Perl automatically stores the parameter list (another name for the argument list)
+# in the special array variable named @_ for the duration of the subroutine.
