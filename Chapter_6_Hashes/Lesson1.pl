@@ -45,3 +45,21 @@ $family_name{'barney'} = 'rubble';
 my %hash = ('a' => 1, 'b' => 2, 'c' => 3);
 my @k = keys %hash;
 my @v = values %hash;
+
+# The exists Function
+# To see whether a key exists in the hash (that is, whether someone has a library card or
+# not), use the exists function, which returns a true value if the given key exists in the
+# hash, whether the corresponding value is true or not:
+if (exists $books{"dino"}) {
+    print "Hey, there's a library card for dino!\n";
+}
+# That is to say, exists $books{"dino"} will return a true value if (and only if) dino is
+# found in the list of keys from keys %books.
+
+
+# The delete Function
+# The delete function removes the given key (and its corresponding value) from the
+# hash (if there’s no such key, its work is done; there’s no warning or error in that case):
+my $person = "betty";
+delete $books{$person};
+# Revoke the library card for $person
