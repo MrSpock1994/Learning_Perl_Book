@@ -228,3 +228,38 @@ printf "Hello, %s; your password expires in %d days!\n", $user, $days_to_die;
 # may appear earlier than the normal output. For example, if your program prints a line
 # of ordinary text, then tries to divide by zero, the output may show the message about
 # dividing by zero first, and the ordinary text second.
+
+
+# Filehandles
+# A filehandle is the name in a Perl program for an I/O connection between your Perl
+# process and the outside world. That is, it’s the name of a connection, not necessarily
+# the name of a file. Indeed, Perl has mechanisms to connect a filehandle to almost any‐
+# thing.
+
+# Fatal Errors with die
+# Step aside for a moment. You need some stuff that isn’t directly related to (or limited
+# to) I/O but is more about getting out of a program earlier than normal.
+# When a fatal error happens inside Perl (for example, if you divide by zero, use an
+# invalid regular expression, or call a subroutine that you haven’t declared), your pro‐
+# gram stops with an error message telling why. But this functionality is available to you
+# with the die function, so you can make your own fatal errors.
+
+# The die function prints out the message you give it (to the standard error stream,
+# where such messages should go) and makes sure that your program exits with a non‐
+# zero exit status.
+# You may not have known it, but every program that runs in Unix (and many other
+# modern operating systems) has an exit status, telling whether it was successful or not.
+# Programs that run other programs (like the make utility program) look at that exit
+# status to see that everything happened correctly. The exit status is just a single byte, so
+# it can’t say much; traditionally, it is 0 for success and a nonzero value for failure. Per‐
+# haps 1 means a syntax error in the command arguments, while 2 means that some‐
+# thing went wrong during processing, and 3 means the configuration file couldn’t be
+# found; the details differ from one command to the next. But 0 always means that
+# everything worked. When the exit status shows failure, a program like make knows
+# not to go on to the next step.
+# So you could rewrite the previous example, perhaps as something like this:
+
+
+if ( ! open LOG, '>>', 'logfile' ) {
+    die "Cannot create logfile: $!";
+}
