@@ -216,13 +216,13 @@ if ( /\.png\z/ ) {
 }
 
 
-Word Anchors
-Anchors aren’t just at the ends of the string. The word-boundary anchor \b matches
-at either end of a word. So you can use /\bfred\b/ to match the word fred but not
-frederick or alfred or manfred mann. This is similar to the feature often called
-something like “match whole words only” in a word processor’s search command.
-Alas, these aren’t words as we are likely to think of them; they’re those \w-type words
-made up of ordinary letters, digits, and underscores. The \b anchor matches at the
-start or end of a group of \w characters. This is subject to the rules that \w is follow‐
-ing, as we showed you earlier in this chapter.
+# Word Anchors
+# Anchors aren’t just at the ends of the string. The word-boundary anchor \b matches
+# at either end of a word. So you can use /\bfred\b/ to match the word fred but not
+# frederick or alfred or manfred mann. This is similar to the feature often called
+# something like “match whole words only” in a word processor’s search command.
+# Alas, these aren’t words as we are likely to think of them; they’re those \w-type words
+# made up of ordinary letters, digits, and underscores. The \b anchor matches at the
+# start or end of a group of \w characters. This is subject to the rules that \w is follow‐
+# ing, as we showed you earlier in this chapter.
 
